@@ -1,6 +1,6 @@
 {
   "name": "@IwanSergeew/next-query-database-items",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "type": "module",
   "main": "./build/esm/index.js",
