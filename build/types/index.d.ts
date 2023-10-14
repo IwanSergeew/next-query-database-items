@@ -1,6 +1,6 @@
 import { MySQL } from '@IwanSergeew/node-mysql';
 
-interface DataTableConfig {
+interface QueryDatabaseItemsConfig$1 {
     enableSearch: boolean;
     perPage: number;
     perPageOptions: number[];
@@ -34,7 +34,7 @@ declare const _default: ({ db, url, table, columns, searchParams, config }: Prop
     rows: any[];
     columns: string[];
     queryProps: QueryDatabaseItemsProps;
-    tableConfig: DataTableConfig;
+    tableConfig: QueryDatabaseItemsConfig$1;
     maxPages: any;
 }>;
 

@@ -1,7 +1,7 @@
 import { MySQL, QryBuilder } from '@IwanSergeew/node-mysql';
 import { QryProps } from './types';
 import cache from 'memory-cache';
-import { DataTableConfig } from '../build/types';
+import { QueryDatabaseItemsConfig } from '../build/types';
 
 export const parseSearchParams = (param: string | string[]) => {
   if (!param?.length) return [];
@@ -88,7 +88,7 @@ export const getItems = async (
   return { rows: rows, fields: fields.map((field: any) => field.name) };
 };
 
-export const getConfig = (config: Partial<DataTableConfig>): DataTableConfig => ({
+export const getConfig = (config: Partial<QueryDatabaseItemsConfig>): QueryDatabaseItemsConfig => ({
   enableSearch: config?.enableSearch ?? true,
   perPage: config?.perPage ?? 5,
   perPageOptions: config?.perPageOptions ?? [2, 5, 10, 15, 20, 25],
