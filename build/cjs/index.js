@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var navigation = require('next/navigation');
 var nodeMysql = require('@IwanSergeew/node-mysql');
 var cache = require('memory-cache');
@@ -111,4 +113,19 @@ var QueryDatabaseItems = async ({ db, url, table, columns, searchParams, config 
     };
 };
 
-module.exports = QueryDatabaseItems;
+var clientUpdateQuery = ({ router, pathname, tableConfig, queryProps }) => {
+    const params = [];
+    params.push(['page', `${queryProps.page + 1}`]);
+    if (queryProps.perPage !== tableConfig.perPage)
+        params.push(['perPage', queryProps.perPage.toString()]);
+    if (queryProps.search.length)
+        params.push(['search', queryProps.search]);
+    const filterKeys = Object.keys(queryProps.filters);
+    for (const filter of filterKeys) {
+        params.push(...parseSearchParams(queryProps.filters[filter]).map((fData) => [`filter-${filter}`, fData]));
+    }
+    router.push(`${pathname}?${new URLSearchParams(params)}`);
+};
+
+exports.clientUpdateQuery = clientUpdateQuery;
+exports.default = QueryDatabaseItems;
