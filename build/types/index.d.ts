@@ -5,7 +5,13 @@ interface DataTableConfig {
     perPage: number;
     perPageOptions: number[];
 }
-interface DataBaseTableQueryProps {
+
+interface QueryDatabaseItemsConfig {
+    enableSearch: boolean;
+    perPage: number;
+    perPageOptions: number[];
+}
+interface QueryDatabaseItemsProps {
     page: number;
     perPage: number;
     search: string;
@@ -22,14 +28,14 @@ type Props = {
     table: string;
     columns: string[];
     searchParams: Record<string, string | string[]>;
-    config?: Partial<DataTableConfig>;
+    config?: Partial<QueryDatabaseItemsConfig>;
 };
 declare const _default: ({ db, url, table, columns, searchParams, config }: Props) => Promise<{
     rows: any[];
     columns: string[];
-    queryProps: DataBaseTableQueryProps;
+    queryProps: QueryDatabaseItemsProps;
     tableConfig: DataTableConfig;
     maxPages: any;
 }>;
 
-export { DataBaseTableQueryProps, DataTableConfig, QryProps, _default as default };
+export { QryProps, QueryDatabaseItemsConfig, QueryDatabaseItemsProps, _default as default };

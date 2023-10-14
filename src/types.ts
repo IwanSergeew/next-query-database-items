@@ -1,10 +1,10 @@
-export interface DataTableConfig {
+export interface QueryDatabaseItemsConfig {
   enableSearch: boolean;
   perPage: number;
   perPageOptions: number[];
 }
 
-export interface DataBaseTableQueryProps {
+export interface QueryDatabaseItemsProps {
   page: number;
   perPage: number;
   search: string;

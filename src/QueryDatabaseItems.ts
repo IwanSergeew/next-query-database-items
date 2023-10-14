@@ -9,7 +9,7 @@ import {
   parseFilters,
   parseSearchParam,
 } from './util';
-import { DataTableConfig, DataBaseTableQueryProps } from './types';
+import { QueryDatabaseItemsConfig, QueryDatabaseItemsProps } from './types';
 
 type Props = {
   db: MySQL;
@@ -17,12 +17,12 @@ type Props = {
   table: string;
   columns: string[];
   searchParams: Record<string, string | string[]>;
-  config?: Partial<DataTableConfig>;
+  config?: Partial<QueryDatabaseItemsConfig>;
 };
 export default async ({ db, url, table, columns, searchParams, config }: Props) => {
   const tableConfig = getConfig(config ?? {});
 
-  const queryProps: DataBaseTableQueryProps = {
+  const queryProps: QueryDatabaseItemsProps = {
     page: searchParams.page ? Number(searchParams.page) - 1 : 0,
     perPage: Number(searchParams.perPage) || tableConfig.perPage,
     search: (tableConfig.enableSearch && parseSearchParam(searchParams.search)) || '',
