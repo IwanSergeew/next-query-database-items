@@ -1,0 +1,39 @@
+{
+  "name": "@IwanSergeew/next-query-database-items",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./build/esm/index.js",
+  "exports": {
+    "require": "./build/cjs/index.js",
+    "import": "./build/esm/index.js"
+  },
+  "types": "./build/types/index.d.ts",
+  "scripts": {
+    "build": "npx rollup -c rollup.config.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IwanSergeew/next-query-database-items.git"
+  },
+  "keywords": [],
+  "author": "IwanSergeew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IwanSergeew/next-query-database-items/issues"
+  },
+  "homepage": "https://github.com/IwanSergeew/next-query-database-items#readme",
+  "publishConfig": {
+    "@IwanSergeew:registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "rollup": "^3.19.1",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  }
+}
