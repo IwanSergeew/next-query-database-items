@@ -1,6 +1,6 @@
 {
   "name": "@IwanSergeew/next-query-database-items",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "description": "",
   "type": "module",
   "main": "./build/esm/index.js",
@@ -28,6 +28,7 @@
     "@IwanSergeew:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
+    "@types/memory-cache": "^0.2.3",
     "@types/node": "^20.6.2",
     "rollup": "^3.19.1",
     "rollup-plugin-dts": "^5.2.0",
@@ -35,5 +36,10 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@IwanSergeew/node-mysql": "^1.2.2",
+    "memory-cache": "^0.2.0",
+    "next": "^13.5.4"
   }
 }
