@@ -1,4 +1,4 @@
-import queryDatabaseItems from './aueryDatabaseItems';
+import queryDatabaseItems from './queryDatabaseItems';
 
 export default queryDatabaseItems;
 export * from './types';
