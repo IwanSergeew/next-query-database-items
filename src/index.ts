@@ -1,6 +1,4 @@
-import QueryDatabaseItems from './QueryDatabaseItems';
-import clientUpdateQuery from './clientUpdateQuery';
+import queryDatabaseItems from './queryDatabaseItems';
 
-export default QueryDatabaseItems;
-export { clientUpdateQuery };
+export default queryDatabaseItems;
 export * from './types';

@@ -1,5 +1,4 @@
 import { MySQL } from '@IwanSergeew/node-mysql';
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 interface QueryDatabaseItemsConfig$1 {
     enableSearch: boolean;
@@ -31,7 +30,7 @@ type Props = {
     searchParams: Record<string, string | string[]>;
     config?: Partial<QueryDatabaseItemsConfig>;
 };
-declare const _default$1: ({ db, url, table, columns, searchParams, config }: Props) => Promise<{
+declare const _default: ({ db, url, table, columns, searchParams, config }: Props) => Promise<{
     rows: any[];
     columns: string[];
     queryProps: QueryDatabaseItemsProps;
@@ -39,12 +38,4 @@ declare const _default$1: ({ db, url, table, columns, searchParams, config }: Pr
     maxPages: any;
 }>;
 
-type UpdateQueryProps = {
-    router: AppRouterInstance;
-    pathname: string;
-    tableConfig: QueryDatabaseItemsConfig;
-    queryProps: QueryDatabaseItemsProps;
-};
-declare const _default: ({ router, pathname, tableConfig, queryProps }: UpdateQueryProps) => void;
-
-export { QryProps, QueryDatabaseItemsConfig, QueryDatabaseItemsProps, _default as clientUpdateQuery, _default$1 as default };
+export { QryProps, QueryDatabaseItemsConfig, QueryDatabaseItemsProps, _default as default };
